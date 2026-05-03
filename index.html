@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mr. Kittithat Banjong — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Mr. Kittithat Banjong (Poongkee)." />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">Poongkee</a>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero container">
+      <div class="hero-card">
+        <div class="hero-photo">
+          <img src="assets/profile.jpg" alt="Profile of Mr. Kittithat Banjong" class="avatar-img" onerror="this.style.display='none';document.querySelector('.hero-photo .avatar').style.display='flex'"/>
+          <div class="avatar" role="img" aria-label="Profile photo placeholder">PB</div>
+        </div>
+        <div class="hero-content">
+          <h1>Mr. Kittithat Banjong</h1>
+          <p class="subtitle">Nickname <strong>Poongkee</strong></p>
+          <p class="email"><a href="mailto:kittithachbrrcng@gmail.com">kittithachbrrcng@gmail.com</a></p>
+          <p class="lead">Frontend-focused portfolio — drummer, student, and developer-in-progress.</p>
+          <p class="hero-meta">Phone: 082-039-3952 • 69/1 หมู่ 8 ต.วังตะกู จ.นครปฐม</p>
+          <p><a class="btn btn-primary" href="#contact">Contact me</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <div class="grid contact-grid">
+        <div class="card">
+          <h3>Info</h3>
+          <ul class="contact-list">
+            <li><strong>Phone:</strong> 082-039-3952</li>
+            <li><strong>Address:</strong> 69/1 หมู่ 8 ต.วังตะกู จ.นครปฐม</li>
+            <li><strong>Email:</strong> <a href="mailto:kittithachbrrcng@gmail.com">kittithachbrrcng@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Social</h3>
+          <ul class="social-list">
+            <li><a href="https://www.facebook.com/jj.sky.181574" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/rki_sky/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section container">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>KAMPHAENGSAEN WITTAYA</h3>
+        <p>Finished Mathayom 4</p>
+        <p><strong>GPA:</strong> 3.39</p>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Skills &amp; Languages</h2>
+      <div class="chips">
+        <span class="chip">Playing Drum</span>
+        <span class="chip">Python</span>
+      </div>
+    </section>
+
+    <section id="experience" class="section container">
+      <h2>Experience &amp; Activities</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-body">
+            <h3>Association of Private Music Schools — Solo drum set competition</h3>
+            <p>Awarded silver coin in the Solo drum set competition (2025).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="section container">
+      <h2>Blog</h2>
+      <article class="post card">
+        <h3>Mixed Instrument Craft Competition</h3>
+        <p>Competed in the Mixed Instrument Craft Competition — won the gold medal and received the first prize of Nakhon Pathom Province.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mr. Kittithat Banjong — Poongkee</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
