@@ -33,9 +33,10 @@
   </header>
 
   <main>
-    <section id="hero" class="hero container">
-      <div class="hero-card">
+    <section id="hero" class="hero container reveal">
+      <div class="hero-card interactive-tilt">
         <div class="hero-photo">
+          <div class="hero-decor" aria-hidden="true"></div>
           <img src="assets/profile.jpg" alt="Profile of Mr. Kittithat Banjong" class="avatar-img" onerror="this.style.display='none';document.querySelector('.hero-photo .avatar').style.display='flex'"/>
           <div class="avatar" role="img" aria-label="Profile photo placeholder">PB</div>
         </div>
@@ -50,7 +51,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section container">
+    <section id="contact" class="section container reveal">
       <h2>Contact</h2>
       <div class="grid contact-grid">
         <div class="card">
@@ -64,8 +65,8 @@
         <div class="card">
           <h3>Social</h3>
           <ul class="social-list">
-            <li><a href="https://www.facebook.com/jj.sky.181574" target="_blank" rel="noopener">Facebook</a></li>
-            <li><a href="https://www.instagram.com/rki_sky/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a class="social-link" href="https://www.facebook.com/jj.sky.181574" target="_blank" rel="noopener"><span class="social-icon fb" aria-hidden="true">f</span> Facebook</a></li>
+            <li><a class="social-link" href="https://www.instagram.com/rki_sky/" target="_blank" rel="noopener"><span class="social-icon ig" aria-hidden="true">ig</span> Instagram</a></li>
           </ul>
         </div>
       </div>
@@ -80,15 +81,21 @@
       </div>
     </section>
 
-    <section id="skills" class="section container">
+    <section id="skills" class="section container reveal">
       <h2>Skills &amp; Languages</h2>
-      <div class="chips">
-        <span class="chip">Playing Drum</span>
-        <span class="chip">Python</span>
+      <div class="skills-grid">
+        <div class="skill">
+          <div class="skill-head"><span>Playing Drum</span><span class="skill-percent">90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-fill="90" style="width:0%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>Python</span><span class="skill-percent">55%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-fill="55" style="width:0%"></div></div>
+        </div>
       </div>
     </section>
 
-    <section id="experience" class="section container">
+    <section id="experience" class="section container reveal">
       <h2>Experience &amp; Activities</h2>
       <div class="timeline">
         <div class="timeline-item">
@@ -101,7 +108,7 @@
       </div>
     </section>
 
-    <section id="awards" class="section container">
+    <section id="awards" class="section container reveal">
       <h2>Awards &amp; Achievements</h2>
       <article class="post card">
         <h3>Mixed Instrument Craft Competition — Musical Arrangement &amp; Performance</h3>

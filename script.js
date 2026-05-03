@@ -53,4 +53,58 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   window.addEventListener('scroll', onScroll);
   onScroll();
+
+  // Reveal on scroll using IntersectionObserver
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const ro = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          ro.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.18});
+    revealEls.forEach(el=>ro.observe(el));
+  } else {
+    // fallback
+    revealEls.forEach(el=>el.classList.add('in-view'));
+  }
+
+  // Animate skill bars when skills section enters
+  const skillFills = document.querySelectorAll('.skill-fill');
+  const skillsSection = document.getElementById('skills');
+  if(skillsSection && 'IntersectionObserver' in window){
+    const so = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          skillFills.forEach(f=>{
+            const v = f.getAttribute('data-fill') || '60';
+            f.style.width = v + '%';
+          });
+          so.unobserve(skillsSection);
+        }
+      });
+    },{threshold:0.3});
+    so.observe(skillsSection);
+  } else {
+    skillFills.forEach(f=>f.style.width = (f.getAttribute('data-fill')||'60') + '%');
+  }
+
+  // Interactive tilt for hero card
+  const heroCard = document.querySelector('.hero-card.interactive-tilt');
+  if(heroCard){
+    const rect = ()=>heroCard.getBoundingClientRect();
+    heroCard.addEventListener('pointermove', (ev)=>{
+      const r = rect();
+      const px = ev.clientX - r.left;
+      const py = ev.clientY - r.top;
+      const cx = r.width/2; const cy = r.height/2;
+      const dx = (px - cx) / cx; const dy = (py - cy) / cy;
+      const rotateX = (dy * 6).toFixed(2);
+      const rotateY = (-dx * 8).toFixed(2);
+      heroCard.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+    heroCard.addEventListener('pointerleave', ()=>{ heroCard.style.transform = ''; });
+  }
 });
